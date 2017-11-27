@@ -5,8 +5,8 @@ set BUILD_GLPK=1
 call activate vopt
 
 conda install --yes --quiet ^
-anaconda alembic coverage ecos django=1.10 flask gevent greenlet ipyparallel ^
-markdown psycopg2 scrapy sphinx_rtd_theme && ^
+anaconda alembic constantly coverage ecos django=1.10 flask gevent greenlet hyperlink incremental ipyparallel krb5 ^
+markdown psycopg2 scrapy sphinx_rtd_theme twisted && ^
 conda install --yes --quiet cvxopt && ^
 conda install --yes --quiet -c conda-forge fabric3 jupyter_nbextensions_configurator && ^
 pip install ^

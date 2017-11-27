@@ -2,7 +2,7 @@
 
 # set environment
 export COIN_INSTALL_DIR=/usr/local/src/Cbc-2.8.9
-export LD_LIBRARY_PATH="/usr/local/src/Cbc-2.8.9.9/lib:$LD_LIBRARY_PATH"
+export LD_LIBRARY_PATH="/usr/local/src/Cbc-2.8.9/lib:$LD_LIBRARY_PATH"
 export GLPK_LIB_DIR=/usr/local/lib
 export GLPK_INC_DIR=/usr/local/include
 export BUILD_GLPK=1
@@ -10,8 +10,8 @@ export BUILD_GLPK=1
 echo "Python package installing..."
 source activate vopt && \
 conda install --yes --quiet \
-anaconda alembic coverage ecos django=1.10 flask gevent greenlet ipyparallel \
-markdown psycopg2 scrapy sphinx_rtd_theme && \
+anaconda alembic constantly coverage ecos django=1.10 flask gevent greenlet hyperlink incremental ipyparallel krb5 \
+markdown psycopg2 scrapy sphinx_rtd_theme twisted && \
 conda install --yes --quiet -c conda-forge fabric3 jupyter_nbextensions_configurator && \
 conda update --yes --quiet libgcc && \
 pip install \
