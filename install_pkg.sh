@@ -18,7 +18,7 @@ pip install \
 gunicorn pudb uwsgi \
 && \
 pip install \
-awscli coreapi cvxopt cvxpy django-crispy-forms django-filter django-guardian django-jinja djangorestframework \
+autopep8 awscli coreapi cvxopt cvxpy django-crispy-forms django-filter django-guardian django-jinja djangorestframework \
 eve flask-restplus flask-security flask_sqlalchemy json-rpc SQLAlchemy-Continuum tushare \
 && \
 ipcluster nbextension enable && \
