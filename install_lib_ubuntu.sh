@@ -16,7 +16,6 @@ DEBIAN_FRONTEND=noninteractive sudo apt-get install -y -q \
      gettext \
      gfortran \
      git \
-     mercurial \
      htop \
      libapparmor1 \
      libatlas-base-dev \
@@ -49,8 +48,9 @@ DEBIAN_FRONTEND=noninteractive sudo apt-get install -y -q \
      libtiff5-dev \
      libtool \
      make \
-     maned \
+     man \
      memcached \
+     mercurial \
      ncdu \
      net-tools \
      nginx \
