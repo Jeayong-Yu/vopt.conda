@@ -70,7 +70,6 @@ DEBIAN_FRONTEND=noninteractive sudo apt-get install -y -q \
      uuid-dev \
      vim \
      wget \
-     wireshark \
      zip unzip bzip2 \
     && echo
 DEBIAN_FRONTEND=noninteractive sudo apt-get -y -q autoremove
