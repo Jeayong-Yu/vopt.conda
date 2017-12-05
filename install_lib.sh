@@ -2,53 +2,31 @@
 
 case `uname` in
 
-  Linux)
-    if type lsb_release >/dev/null 2>&1; then
-      OS=$(lsb_release -si)
-      VER=$(lsb_release -sr)
+    Linux)
+        if type lsb_release >/dev/null 2>&1; then
+            OS=$(lsb_release -si)
+            VER=$(lsb_release -sr)
+            if [ "$OS" == "Ubuntu" ] && [ "$VER" == "16.04" ]; then
+                /bin/bash install_lib_ubuntu.sh
+            else
+                echo "Error! Support Ubuntu only."
+                return
+            fi
+        else
+            echo "Error! Cannot find linux version."
+            return
+        fi
+        ;;
 
-      if [ "$OS" == "Ubuntu" ] && [ "$VER" == "16.04" ]; then
-        sudo apt-get update -y -q && \
-        sudo apt-get upgrade -y -q && \
-        sudo apt-get install -y -q \
-        apt-file gdebi-core software-properties-common pkg-config \
-        sudo man htop ncdu dos2unix \
-        ed emacs24 vim tmux screen zip unzip bzip2 git mercurial subversion curl wget \
-        net-tools openssl apparmor \
-        build-essential autoconf automake cmake make gfortran gettext libtool swig uuid-dev \
-        default-jre default-jdk \
-        nginx memcached openssh-server postgresql postgresql-contrib rsyslog supervisor \
-        libatlas-base-dev libboost-all-dev libclang1 libclang-dev libgflags-dev libgtest-dev \
-        libcurl4-gnutls-dev libspatialindex-dev libgeos-dev libgdal-dev \
-        libgoogle-glog-dev libprotobuf-dev protobuf-compiler libiomp-dev libleveldb-dev \
-        liblmdb-dev libjpeg-dev libpq-dev libpgm-dev libpng-dev libpng12-dev libpng++-dev libopencv-dev \
-        libtiff5-dev libevent-dev libapparmor1 libssh2-1-dev libssl-dev libgl1-mesa-glx \
-        coinor-clp coinor-libclp-dev coinor-cbc coinor-csdp coinor-libcbc-dev coinor-libcoinmp-dev \
-        coinor-libcgl-dev coinor-libdylp-dev coinor-libflopc++-dev coinor-libipopt-dev \
-        coinor-libosi-dev coinor-libsymphony-dev coinor-libvol-dev coinor-libcoinutils-dev \
-        && sudo apt-get -y -q autoremove \
-        && sudo apt-get -y -q clean
+    Darwin)
+        echo "Mac OS X."
+        export MACOSX_DEPLOYMENT_TARGET=10.10
+        ;;
 
-      else
-          echo "Error! Support Ubuntu only."
-          return
-      fi
-
-    else
-       echo "Error! Cannot find linux version."
-       return
-    fi
-    ;;
-
-  Darwin)
-     echo "Mac OS X."
-     export MACOSX_DEPLOYMENT_TARGET=10.10
-     ;;
-
-  *)
-     echo "Error! Unsupported OS."
-     return
-     ;;
+    *)
+        echo "Error! Unsupported OS."
+        return
+        ;;
 
 esac
 
