@@ -26,9 +26,7 @@ jupyter nbextensions_configurator enable --user && \
 echo
 
 echo "CyLP package for Python3 installing..."
-pip install git+https://github.com/jjhelmus/CyLP.git@py3
-
-#!/usr/bin/env bash
+pip install git+https://github.com/VeranosTech/CyLP.git@py3
 
 case `uname` in
 
