@@ -7,7 +7,7 @@ a conda virtual enviroment named `vopt` for `vopt` Veranos Optimizer
 
 `vopt` virtual enviroment consist of:
 
-* Python 3.5 and other python packages
+* Python 3.6 and other python packages
 * for package details, read `vopt-environment.yml`
 
 
