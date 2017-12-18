@@ -1,25 +1,23 @@
 #!/usr/bin/env bash
 
 # set environment
-export COIN_INSTALL_DIR=/usr/local/src/Cbc-2.8.9
-export LD_LIBRARY_PATH="/usr/local/src/Cbc-2.8.9/lib:$LD_LIBRARY_PATH"
-export GLPK_LIB_DIR=/usr/local/lib
-export GLPK_INC_DIR=/usr/local/include
-export BUILD_GLPK=1
+export COIN_INSTALL_DIR=~/anaconda3/envs/vopt/
+export LD_LIBRARY_PATH="~/anaconda3/envs/vopt/lib:$LD_LIBRARY_PATH"
+export MACOSX_DEPLOYMENT_TARGET=10.10
 
 echo "Python package installing..."
 source activate vopt && \
 conda install --yes --quiet \
 anaconda alembic constantly coverage ecos django=1.10 flask gevent greenlet hyperlink incremental ipyparallel krb5 \
 markdown psycopg2 scrapy sphinx_rtd_theme twisted && \
-conda install --yes --quiet -c conda-forge fabric3 jupyter_nbextensions_configurator && \
+conda install --yes --quiet -c conda-forge coincbc fabric3 fastparquet feather-format jupyter_nbextensions_configurator pyarrow && \
 conda update --yes --quiet libgcc && \
 pip install \
 gunicorn pudb uwsgi \
 && \
 pip install \
 autopep8 awscli coreapi cvxopt cvxpy django-crispy-forms django-filter django-guardian django-jinja djangorestframework \
-eve flask-restplus flask-security flask_sqlalchemy json-rpc SQLAlchemy-Continuum tushare \
+eve flask-restplus flask-security flask_sqlalchemy json-rpc nbsphinx SQLAlchemy-Continuum tushare \
 && \
 ipcluster nbextension enable && \
 jupyter nbextensions_configurator enable --user && \
