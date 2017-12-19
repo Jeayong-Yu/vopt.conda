@@ -12,7 +12,7 @@ export BUILD_GLPK=1
 echo "Python package installing..."
 source activate vopt && \
 conda install --yes --quiet \
-anaconda alembic constantly coverage ecos django flask gevent greenlet hyperlink incremental ipyparallel krb5 \
+anaconda alembic constantly coverage cvxopt ecos django flask gevent greenlet hyperlink incremental ipyparallel krb5 \
 markdown psycopg2 scrapy sphinx_rtd_theme twisted && \
 conda install --yes --quiet -c conda-forge coincbc fabric3 fastparquet feather-format glpk jupyter_nbextensions_configurator pyarrow && \
 conda update --yes --quiet libgcc && \
@@ -20,7 +20,7 @@ pip install \
 gunicorn pudb uwsgi \
 && \
 pip install \
-autopep8 awscli coreapi cvxopt cvxpy django-crispy-forms django-filter django-guardian django-jinja djangorestframework \
+autopep8 awscli coreapi cvxpy django-crispy-forms django-filter django-guardian django-jinja djangorestframework \
 eve flask-restplus flask-security flask_sqlalchemy json-rpc nbsphinx SQLAlchemy-Continuum tushare \
 && \
 ipcluster nbextension enable && \
