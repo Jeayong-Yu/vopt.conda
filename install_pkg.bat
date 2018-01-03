@@ -7,13 +7,13 @@ set BUILD_GLPK=1
 
 call activate vopt
 conda install --yes --quiet ^
-anaconda alembic constantly coverage cvxopt ecos django flask gevent greenlet hyperlink incremental ipyparallel krb5 \
-markdown psycopg2 scrapy sphinx_rtd_theme twisted && ^
-conda install --yes --quiet -c conda-forge fabric3 fastparquet feather-format glpk jupyter_nbextensions_configurator pyarrow && ^
+anaconda alembic beautifulsoup4 constantly coverage cvxcanon cvxopt ecos django flask gevent greenlet hyperlink incremental ipyparallel krb5 \
+markdown pymongo psycopg2 requests scrapy simplejson sphinx sphinx_rtd_theme toolz twisted werkzeug && ^
+conda install --yes --quiet -c conda-forge fabric3 fastparquet feather-format glpk jupyter_nbextensions_configurator multiprocess pyarrow && ^
 pip install ^
 autopep8 awscli coreapi cvxpy django-crispy-forms django-filter django-guardian django-jinja djangorestframework ^
 eve flask-restplus flask-security flask_sqlalchemy json-rpc nbsphinx SQLAlchemy-Continuum tushare ^
-ipcluster nbextension enable && ^
+ipcluster nbextension enable --user && ^
 jupyter nbextensions_configurator enable --user && ^
 pip install git+https://github.com/VeranosTech/CyLP.git@py3 ^
 call deactivate
