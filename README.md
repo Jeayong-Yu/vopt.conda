@@ -19,19 +19,14 @@ a conda virtual enviroment named `vopt` for `vopt` Veranos Optimizer
   * Mac OS X with Docker Toolbox
   * Windows (No CBC/CLP solver)
 
-* You need to install Anaconda or Miniconda.
+* You need to install Anaconda.
 
   Download 64-bit Python 3.6 version from
     * https://www.continuum.io/downloads
-    * https://conda.io/miniconda.html
 
   and execute:
   ```
   $ bash Anaconda3-4.4.0-Linux-x86_64.sh
-  ```
-  or
-  ```
-  $ bash Miniconda3-latest-Linux-x86_64.sh
   ```
 
 * On Windows, you need to install "Microsoft Visual C++ Build Tools"
