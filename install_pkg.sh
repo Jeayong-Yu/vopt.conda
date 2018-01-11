@@ -2,6 +2,7 @@
 
 # environment variables
 export MACOSX_DEPLOYMENT_TARGET=10.10
+export PKG_CONFIG_PATH=~/anaconda3/envs/vopt/lib/pkgconfig/
 export CYLP_USE_CYTHON=TRUE
 export COIN_INSTALL_DIR=~/anaconda3/envs/vopt/
 export LD_LIBRARY_PATH="~/anaconda3/envs/vopt/lib:$LD_LIBRARY_PATH"
