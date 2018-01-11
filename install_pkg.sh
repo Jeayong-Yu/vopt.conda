@@ -27,7 +27,7 @@ toolz twisted werkzeug \
 && \
 echo "Common Anaconda Packages in Conda-Forge:" && \
 conda install --yes --quiet -c conda-forge \
-awscli fabric3 fastparquet feather-format glpk jupyter_nbextensions_configurator \
+aniso8601 awscli fabric3 fastparquet feather-format glpk jupyter_nbextensions_configurator \
 multiprocess pyarrow \
 && \
 echo "Linux/OSX Anaconda Packages:" &&  \
