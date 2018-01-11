@@ -2,12 +2,17 @@
 
 # environment variables
 export MACOSX_DEPLOYMENT_TARGET=10.10
-export PKG_CONFIG_PATH=~/anaconda3/envs/vopt/lib/pkgconfig/
+
+export PKG_CONFIG_PATH=$HOME/anaconda3/envs/vopt/lib/pkgconfig/
+export LD_LIBRARY_PATH=$HOME/anaconda3/envs/vopt/lib:$LD_LIBRARY_PATH
+
+export COIN_INSTALL_DIR=$HOME/anaconda3/envs/vopt/
+export COIN_LIB_DIR=$HOME/anaconda3/envs/vopt/lib/
+export COIN_INC_DIR=$HOME/anaconda3/envs/vopt/include/coin/
 export CYLP_USE_CYTHON=TRUE
-export COIN_INSTALL_DIR=~/anaconda3/envs/vopt/
-export LD_LIBRARY_PATH="~/anaconda3/envs/vopt/lib:$LD_LIBRARY_PATH"
-export GLPK_LIB_DIR=~/anaconda3/envs/vopt/
-export GLPK_INC_DIR=~/anaconda3/envs/vopt/include
+
+export GLPK_LIB_DIR=$HOME/anaconda3/envs/vopt/
+export GLPK_INC_DIR=$HOME/anaconda3/envs/vopt/include
 export BUILD_GLPK=1
 
 echo "Python package installing..."
