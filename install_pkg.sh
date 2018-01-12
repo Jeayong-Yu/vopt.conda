@@ -22,7 +22,7 @@ echo "Common Anaconda Packages:" && \
 conda install --yes --quiet -c anaconda \
 anaconda alembic beautifulsoup4 constantly coverage cvxcanon cvxopt django ecos flask \
 gevent greenlet hyperlink incremental ipyparallel krb5 \
-matplotlib markdown nose pymongo psycopg2 requests scikit-learn scrapy seaborn simplejson sphinx sphinx_rtd_theme \
+line_profiler matplotlib markdown nose pymongo psycopg2 requests scikit-learn scrapy seaborn simplejson sphinx sphinx_rtd_theme \
 toolz twisted werkzeug \
 && \
 echo "Common Anaconda Packages in Conda-Forge:" && \
@@ -49,7 +49,20 @@ echo "Jupyter notebook setting:" && \
 ipcluster nbextension enable --user && \
 jupyter nbextensions_configurator enable --user && \
 
-echo "CyLP package for Python3 installing..." && \
-pip install git+https://github.com/VeranosTech/CyLP.git@py3
+if [[ -v CYLP_SRC_DIR ]]; then
+  if [ -d "$CYLP_SRC_DIR" ]; then
+    echo "CyLP package for Python3 Develop Mode installing from local: $CYLP_SRC_DIR" && \
+    curdir=$PWD &&
+    cd "$CYLP_SRC_DIR" && \
+    python setup.py develop && \
+    cd $curdir
+  else
+    echo "$CYLP_SRC_DIR not exist!. stop."
+    return
+  fi
+else
+  echo "CyLP package for Python3 installing fro Github..." && \
+  pip install git+https://github.com/VeranosTech/CyLP.git@py3
+fi
 
 source deactivate

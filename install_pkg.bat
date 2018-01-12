@@ -12,7 +12,7 @@ echo "Common Anaconda Packages:" && ^
 conda install --yes --quiet -c anaconda ^
 anaconda alembic beautifulsoup4 constantly coverage cvxcanon cvxopt django ecos flask ^
 gevent greenlet hyperlink incremental ipyparallel krb5 ^
-matplotlib markdown nose pymongo psycopg2 requests scikit-learn scrapy seaborn simplejson sphinx sphinx_rtd_theme ^
+line_profiler matplotlib markdown nose pymongo psycopg2 requests scikit-learn scrapy seaborn simplejson sphinx sphinx_rtd_theme ^
 toolz twisted werkzeug ^
 && ^
 echo "Common Anaconda Packages in Conda-Forge:" && ^
