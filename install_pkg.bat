@@ -25,7 +25,7 @@ pip install ^
 autopep8 awscli coreapi cvxpy django-crispy-forms django-filter django-guardian ^
 django-jinja djangorestframework ^
 eve flask-restplus flask-security flask_sqlalchemy json-rpc nbsphinx ^
-SQLAlchemy-Continuum tushare ^
+scrapyd SQLAlchemy-Continuum tushare ^
 && ^
 echo "Jupyter notebook setting:" && ^
 ipcluster nbextension enable --user && ^

@@ -20,31 +20,82 @@ source activate vopt
 
 echo "Common Anaconda Packages:" && \
 conda install --yes --quiet -c anaconda \
-anaconda alembic beautifulsoup4 constantly coverage cvxcanon cvxopt django ecos flask \
-gevent greenlet hyperlink incremental ipyparallel krb5 \
-line_profiler matplotlib markdown nose pymongo psycopg2 requests scikit-learn scrapy seaborn simplejson sphinx sphinx_rtd_theme \
-toolz twisted werkzeug \
-&& \
+    anaconda \
+    alembic \
+    beautifulsoup4 \
+    constantly \
+    coverage \
+    cvxcanon \
+    cvxopt \
+    django \
+    ecos \
+    flask \
+    gevent \
+    greenlet \
+    hyperlink \
+    incremental \
+    ipyparallel \
+    krb5 \
+    line_profiler \
+    matplotlib \
+    markdown \
+    nose \
+    pymongo \
+    psycopg2 \
+    requests \
+    scikit-learn \
+    scrapy \
+    seaborn \
+    simplejson \
+    sphinx \
+    sphinx_rtd_theme \
+    toolz \
+    twisted \
+    werkzeug \
+    && \
 echo "Common Anaconda Packages in Conda-Forge:" && \
 conda install --yes --quiet -c conda-forge \
-aniso8601 awscli fabric3 fastparquet feather-format glpk jupyter_nbextensions_configurator \
-multiprocess pyarrow \
-&& \
+    aniso8601 \
+    awscli \
+    fabric3 \
+    fastparquet \
+    feather-format \
+    glpk \
+    jupyter_nbextensions_configurator \
+    multiprocess \
+    pyarrow \
+    && \
 echo "Linux/OSX Anaconda Packages:" &&  \
 conda install --yes --quiet \
-gunicorn \
-&& \
+    gunicorn \
+    && \
 echo "Linux/OSX Anaconda Packages in Conda-Forge:" && \
 conda install --yes --quiet -c conda-forge \
-coincbc pudb uwsgi \
-&& \
+    coincbc \
+    pudb \
+    uwsgi \
+    && \
 echo "Common pip Packages:" && \
 pip install \
-autopep8 awscli coreapi cvxpy django-crispy-forms django-filter django-guardian \
-django-jinja djangorestframework \
-eve flask-restplus flask-security flask_sqlalchemy json-rpc nbsphinx \
-SQLAlchemy-Continuum tushare \
-&& \
+    autopep8 \
+    awscli \
+    coreapi \
+    cvxpy \
+    django-crispy-forms \
+    django-filter \
+    django-guardian \
+    django-jinja \
+    djangorestframework \
+    eve \
+    flask-restplus \
+    flask-security \
+    flask_sqlalchemy \
+    json-rpc \
+    nbsphinx \
+    scrapyd \
+    SQLAlchemy-Continuum \
+    tushare \
+    && \
 echo "Jupyter notebook setting:" && \
 ipcluster nbextension enable --user && \
 jupyter nbextensions_configurator enable --user && \
