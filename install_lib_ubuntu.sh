@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 DEBIAN_FRONTEND=noninteractive sudo apt-get update -y -q
 DEBIAN_FRONTEND=noninteractive sudo apt-get upgrade -y -q
 DEBIAN_FRONTEND=noninteractive sudo apt-get install -y -q \

@@ -1,19 +1,36 @@
 cd /D %~dp0
 
+# environment variables
+set GLPK_LIB_DIR=C:\Anaconda3\envs\vopt\Library\lib
+set GLPK_INC_DIR=C:\Anaconda3\envs\vopt\Library\include
 set BUILD_GLPK=1
 
+echo "Python package installing..."
 call activate vopt
 
-conda install --yes --quiet ^
-anaconda alembic constantly coverage ecos django=1.10 flask gevent greenlet hyperlink incremental ipyparallel krb5 ^
-markdown psycopg2 scrapy sphinx_rtd_theme twisted && ^
-conda install --yes --quiet cvxopt && ^
-conda install --yes --quiet -c conda-forge fabric3 jupyter_nbextensions_configurator && ^
+echo "Common Anaconda Packages:" && ^
+conda install --yes --quiet -c anaconda ^
+anaconda alembic beautifulsoup4 constantly coverage cvxcanon cvxopt django ecos flask ^
+gevent greenlet hyperlink incremental ipyparallel krb5 ^
+line_profiler matplotlib markdown nose pymongo psycopg2 requests scikit-learn scrapy seaborn simplejson sphinx sphinx_rtd_theme ^
+toolz twisted werkzeug ^
+&& ^
+echo "Common Anaconda Packages in Conda-Forge:" && ^
+conda install --yes --quiet -c conda-forge ^
+aniso8601 awscli fabric3 fastparquet feather-format glpk jupyter_nbextensions_configurator ^
+multiprocess pyarrow ^
+&& ^
+echo "Common pip Packages:" && ^
 pip install ^
-autopep8 awscli coreapi cvxpy django-crispy-forms django-filter django-guardian django-jinja djangorestframework ^
-eve flask-restplus flask-security flask_sqlalchemy json-rpc SQLAlchemy-Continuum tushare && ^
-pip install py3_ortools-6.4.4495-cp35-cp35m-win_amd64.whl && ^
-ipcluster nbextension enable && ^
+autopep8 awscli coreapi cvxpy django-crispy-forms django-filter django-guardian ^
+django-jinja djangorestframework ^
+eve flask-restplus flask-security flask_sqlalchemy json-rpc nbsphinx ^
+SQLAlchemy-Continuum tushare ^
+&& ^
+echo "Jupyter notebook setting:" && ^
+ipcluster nbextension enable --user && ^
 jupyter nbextensions_configurator enable --user && ^
+echo
+
 call deactivate
 cmd.exe /K

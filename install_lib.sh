@@ -20,7 +20,7 @@ case `uname` in
 
     Darwin)
         echo "Mac OS X."
-        export MACOSX_DEPLOYMENT_TARGET=10.10
+        return
         ;;
 
     *)
@@ -29,5 +29,3 @@ case `uname` in
         ;;
 
 esac
-
-/bin/bash install_lib_optimizer.sh

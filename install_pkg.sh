@@ -1,103 +1,68 @@
 #!/usr/bin/env bash
 
-# set environment
-export COIN_INSTALL_DIR=/usr/local/src/Cbc-2.8.9
-export LD_LIBRARY_PATH="/usr/local/src/Cbc-2.8.9/lib:$LD_LIBRARY_PATH"
-export GLPK_LIB_DIR=/usr/local/lib
-export GLPK_INC_DIR=/usr/local/include
+# environment variables
+export MACOSX_DEPLOYMENT_TARGET=10.10
+
+export PKG_CONFIG_PATH=$HOME/anaconda3/envs/vopt/lib/pkgconfig/
+export LD_LIBRARY_PATH=$HOME/anaconda3/envs/vopt/lib:$LD_LIBRARY_PATH
+
+export COIN_INSTALL_DIR=$HOME/anaconda3/envs/vopt/
+export COIN_LIB_DIR=$HOME/anaconda3/envs/vopt/lib/
+export COIN_INC_DIR=$HOME/anaconda3/envs/vopt/include/coin/
+export CYLP_USE_CYTHON=TRUE
+
+export GLPK_LIB_DIR=$HOME/anaconda3/envs/vopt/
+export GLPK_INC_DIR=$HOME/anaconda3/envs/vopt/include
 export BUILD_GLPK=1
 
 echo "Python package installing..."
-source activate vopt && \
-conda install --yes --quiet \
-    anaconda \
-    alembic \
-    constantly \
-    coverage \
-    ecos \
-    django=1.10 \
-    flask \
-    gevent \
-    greenlet \
-    hyperlink \
-    incremental \
-    ipyparallel \
-    krb5 \
-    markdown \
-    psycopg2 \
-    scrapy \
-    sphinx_rtd_theme \
-    twisted \
-    && \
+source activate vopt
+
+echo "Common Anaconda Packages:" && \
+conda install --yes --quiet -c anaconda \
+anaconda alembic beautifulsoup4 constantly coverage cvxcanon cvxopt django ecos flask \
+gevent greenlet hyperlink incremental ipyparallel krb5 \
+line_profiler matplotlib markdown nose pymongo psycopg2 requests scikit-learn scrapy seaborn simplejson sphinx sphinx_rtd_theme \
+toolz twisted werkzeug \
+&& \
+echo "Common Anaconda Packages in Conda-Forge:" && \
 conda install --yes --quiet -c conda-forge \
-    fabric3 \
-    jupyter_nbextensions_configurator \
-    && \
-conda update --yes --quiet \
-    libgcc \
-    && \
+aniso8601 awscli fabric3 fastparquet feather-format glpk jupyter_nbextensions_configurator \
+multiprocess pyarrow \
+&& \
+echo "Linux/OSX Anaconda Packages:" &&  \
+conda install --yes --quiet \
+gunicorn \
+&& \
+echo "Linux/OSX Anaconda Packages in Conda-Forge:" && \
+conda install --yes --quiet -c conda-forge \
+coincbc pudb uwsgi \
+&& \
+echo "Common pip Packages:" && \
 pip install \
-    gunicorn \
-    pudb \
-    uwsgi \
-    && \
-pip install \
-    autopep8 \
-    awscli \
-    coreapi \
-    cvxopt \
-    cvxpy \
-    django-crispy-forms \
-    django-filter \
-    django-guardian \
-    django-jinja \
-    djangorestframework \
-    eve \
-    flask-restplus \
-    flask-security \
-    flask_sqlalchemy \
-    json-rpc \
-    SQLAlchemy-Continuum \
-    tushare \
-    && \
-ipcluster nbextension enable && \
+autopep8 awscli coreapi cvxpy django-crispy-forms django-filter django-guardian \
+django-jinja djangorestframework \
+eve flask-restplus flask-security flask_sqlalchemy json-rpc nbsphinx \
+SQLAlchemy-Continuum tushare \
+&& \
+echo "Jupyter notebook setting:" && \
+ipcluster nbextension enable --user && \
 jupyter nbextensions_configurator enable --user && \
-echo
 
-echo "CyLP package for Python3 installing..."
-pip install git+https://github.com/VeranosTech/CyLP.git@py3
-
-case `uname` in
-
-  Linux)
-    if type lsb_release >/dev/null 2>&1; then
-      OS=$(lsb_release -si)
-      VER=$(lsb_release -sr)
-
-      if [ "$OS" == "Ubuntu" ] && [ "$VER" == "16.04" ]; then
-	  pip install py3_ortools-6.4.4495-cp35-cp35m-manylinux1_x86_64.whl
-	  return
-      else
-          echo "Error! Support Ubuntu 16.04 only."
-          return
-      fi
-
-    else
-       echo "Error! Cannot find linux version."
-       return
-    fi
-    ;;
-
-  Darwin)
-     pip install py3_ortools-6.4.4495-cp35-cp35m-macosx_10_6_intel.whl
-     return
-     ;;
-
-  *)
-     echo "Error! Unsupported OS."
-     return
-     ;;
-
-esac
+if [[ -v CYLP_SRC_DIR ]]; then
+  if [ -d "$CYLP_SRC_DIR" ]; then
+    echo "CyLP package for Python3 Develop Mode installing from local: $CYLP_SRC_DIR" && \
+    curdir=$PWD &&
+    cd "$CYLP_SRC_DIR" && \
+    python setup.py develop && \
+    cd $curdir
+  else
+    echo "$CYLP_SRC_DIR not exist!. stop."
+    return
+  fi
+else
+  echo "CyLP package for Python3 installing fro Github..." && \
+  pip install git+https://github.com/VeranosTech/CyLP.git@py3
+fi
 
 source deactivate
