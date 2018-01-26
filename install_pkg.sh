@@ -95,6 +95,7 @@ pip install \
     scrapyd \
     SQLAlchemy-Continuum \
     tushare \
+    git+https://github.com/scrapy/scrapyd-client \
     && \
 echo "Jupyter notebook setting:" && \
 ipcluster nbextension enable --user && \
