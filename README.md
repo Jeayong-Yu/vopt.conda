@@ -29,6 +29,10 @@ a conda virtual enviroment named `vopt` for `vopt` Veranos Optimizer
   $ bash Anaconda3-4.4.0-Linux-x86_64.sh
   ```
 
+* On Linux/MAC OS X, you need to upgrade bash to 4.2 or newer version
+
+  * see https://apple.stackexchange.com/questions/193411/update-bash-to-version-4-0-on-osx
+
 * On Windows, you need to install "Microsoft Visual C++ Build Tools"
 
   * http://landinghub.visualstudio.com/visual-cpp-build-tools
