@@ -35,6 +35,7 @@ conda install --yes --quiet -c anaconda \
     hyperlink \
     incremental \
     ipyparallel \
+    jinja2 \
     krb5 \
     line_profiler \
     matplotlib \
