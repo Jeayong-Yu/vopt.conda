@@ -27,6 +27,7 @@ conda install --yes --quiet -c anaconda \
     coverage \
     cvxcanon \
     cvxopt \
+    cython \
     django \
     ecos \
     flask \
@@ -38,6 +39,7 @@ conda install --yes --quiet -c anaconda \
     jinja2 \
     krb5 \
     line_profiler \
+    lxml \
     matplotlib \
     markdown \
     nose \
@@ -57,6 +59,7 @@ conda install --yes --quiet -c anaconda \
 echo "Common Anaconda Packages in Conda-Forge:" && \
 conda install --yes --quiet -c conda-forge \
     aniso8601 \
+    autopep8 \
     awscli \
     fabric3 \
     fastparquet \
