@@ -10,14 +10,14 @@ call activate vopt
 
 echo "Common Anaconda Packages:" && ^
 conda install --yes --quiet -c anaconda ^
-anaconda alembic beautifulsoup4 constantly coverage cvxcanon cvxopt django ecos flask ^
+anaconda alembic beautifulsoup4 constantly coverage cvxcanon cvxopt cython django ecos flask ^
 gevent greenlet hyperlink incremental ipyparallel krb5 ^
-line_profiler matplotlib markdown nose pymongo psycopg2 requests scikit-learn scrapy seaborn simplejson sphinx sphinx_rtd_theme ^
+line_profiler lxml matplotlib markdown nose pymongo psycopg2 requests scikit-learn scrapy seaborn simplejson sphinx sphinx_rtd_theme ^
 toolz twisted werkzeug ^
 && ^
 echo "Common Anaconda Packages in Conda-Forge:" && ^
 conda install --yes --quiet -c conda-forge ^
-aniso8601 awscli fabric3 fastparquet feather-format glpk jupyter_nbextensions_configurator ^
+aniso8601 autopep8 awscli fabric3 fastparquet feather-format glpk jupyter_nbextensions_configurator ^
 multiprocess pyarrow ^
 && ^
 echo "Common pip Packages:" && ^
