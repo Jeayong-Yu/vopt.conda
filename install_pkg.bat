@@ -42,6 +42,8 @@ sphinx_rtd_theme ^
 toolz ^
 twisted ^
 werkzeug ^
+lxml ^
+cython ^
 && ^
 echo "Common Anaconda Packages in Conda-Forge:" && ^
 conda install --yes --quiet -c conda-forge ^
