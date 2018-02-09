@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
-DEBIAN_FRONTEND=noninteractive sudo apt-get update -y -q
-DEBIAN_FRONTEND=noninteractive sudo apt-get upgrade -y -q
-DEBIAN_FRONTEND=noninteractive sudo apt-get install -y -q \
+sudo DEBIAN_FRONTEND=noninteractive apt-get update -y -q
+sudo DEBIAN_FRONTEND=noninteractive apt-get upgrade -y -q
+sudo DEBIAN_FRONTEND=noninteractive apt-get install -y -q \
      apparmor \
      apt-file \
      autoconf \
@@ -72,7 +72,9 @@ DEBIAN_FRONTEND=noninteractive sudo apt-get install -y -q \
      uuid-dev \
      vim \
      wget \
-     zip unzip bzip2 \
+     zip \
+     unzip \
+     bzip2 \
     && echo
-DEBIAN_FRONTEND=noninteractive sudo apt-get -y -q autoremove
-DEBIAN_FRONTEND=noninteractive sudo apt-get -y -q clean
+sudo DEBIAN_FRONTEND=noninteractive apt-get -y -q autoremove
+sudo DEBIAN_FRONTEND=noninteractive apt-get -y -q clean
