@@ -99,6 +99,7 @@ pip install \
     scrapyd \
     SQLAlchemy-Continuum \
     tushare \
+    fake-useragent \
     git+https://github.com/scrapy/scrapyd-client \
     && \
 echo "Jupyter notebook setting:" && \
