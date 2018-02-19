@@ -18,10 +18,10 @@ export BUILD_GLPK=1
 echo "Python package installing..."
 source activate vopt
 
-echo "Common Anaconda Packages:" && \
+echo "Anaconda Packages:" && \
 conda install --yes --quiet -c anaconda \
-    anaconda \
     alembic \
+    anaconda \
     beautifulsoup4 \
     constantly \
     coverage \
@@ -33,6 +33,7 @@ conda install --yes --quiet -c anaconda \
     flask \
     gevent \
     greenlet \
+    gunicorn \
     hyperlink \
     incremental \
     ipyparallel \
@@ -40,11 +41,13 @@ conda install --yes --quiet -c anaconda \
     krb5 \
     line_profiler \
     lxml \
-    matplotlib \
     markdown \
+    matplotlib \
     nose \
-    pymongo \
+    notebook \
     psycopg2 \
+    pycodestyle \
+    pymongo \
     requests \
     scikit-learn \
     scrapy \
@@ -52,55 +55,47 @@ conda install --yes --quiet -c anaconda \
     simplejson \
     sphinx \
     sphinx_rtd_theme \
+    sqlalchemy \
     toolz \
     twisted \
     werkzeug \
     && \
-echo "Common Anaconda Packages in Conda-Forge:" && \
+echo "Anaconda Packages in Conda-Forge:" && \
 conda install --yes --quiet -c conda-forge \
     aniso8601 \
     autopep8 \
     awscli \
-    fabric3 \
-    fastparquet \
-    feather-format \
-    glpk \
-    jupyter_nbextensions_configurator \
-    multiprocess \
-    pyarrow \
-    && \
-echo "Linux/OSX Anaconda Packages:" &&  \
-conda install --yes --quiet \
-    gunicorn \
-    && \
-echo "Linux/OSX Anaconda Packages in Conda-Forge:" && \
-conda install --yes --quiet -c conda-forge \
     coincbc \
-    pudb \
-    uwsgi \
-    && \
-echo "Common pip Packages:" && \
-pip install \
-    autopep8 \
-    awscli \
-    coreapi \
-    cvxpy \
     django-crispy-forms \
     django-filter \
     django-guardian \
-    django-jinja \
     djangorestframework \
-    eve \
+    fabric3 \
+    fastparquet \
+    feather-format \
     flask-restplus \
     flask-security \
-    flask_sqlalchemy \
+    glpk \
     json-rpc \
+    jupyter_nbextensions_configurator \
+    multiprocess \
     nbsphinx \
-    scrapyd \
-    SQLAlchemy-Continuum \
-    tushare \
+    pep8-naming \
+    pudb \
+    pyarrow \
+    uwsgi \
+    && \
+echo "Pip Packages:" && \
+pip install \
+    coreapi \
+    cvxpy \
+    django-jinja \
+    eve \
     fake-useragent \
+    flask_sqlalchemy \
     git+https://github.com/scrapy/scrapyd-client \
+    scrapyd \
+    tushare \
     && \
 echo "Jupyter notebook setting:" && \
 ipcluster nbextension enable --user && \
@@ -121,5 +116,4 @@ else
   echo "CyLP package for Python3 installing fro Github..." && \
   pip install git+https://github.com/VeranosTech/CyLP.git@py3
 fi
-
 source deactivate
