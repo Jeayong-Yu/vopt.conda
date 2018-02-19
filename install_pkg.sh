@@ -30,6 +30,7 @@ conda install --yes --quiet -c anaconda \
     cython \
     django \
     ecos \
+    fastcache \
     flask \
     gevent \
     greenlet \
@@ -65,11 +66,13 @@ conda install --yes --quiet -c conda-forge \
     aniso8601 \
     autopep8 \
     awscli \
+    cerberus \
     coincbc \
     django-crispy-forms \
     django-filter \
     django-guardian \
     djangorestframework \
+    events \
     fabric3 \
     fastparquet \
     feather-format \
@@ -83,18 +86,18 @@ conda install --yes --quiet -c conda-forge \
     pep8-naming \
     pudb \
     pyarrow \
+    uritemplate \
     uwsgi \
     && \
 echo "Pip Packages:" && \
 pip install \
-    coreapi \
     cvxpy \
     django-jinja \
-    eve \
     fake-useragent \
     flask_sqlalchemy \
     git+https://github.com/scrapy/scrapyd-client \
     scrapyd \
+    scs \
     tushare \
     && \
 echo "Jupyter notebook setting:" && \
