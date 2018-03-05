@@ -1,8 +1,0 @@
-cvxpy
-django-jinja
-fake-useragent
-flask-sqlalchemy
-scrapyd
-scrapyd-client
-scs
-tushare
