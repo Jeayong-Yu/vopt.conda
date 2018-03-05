@@ -37,6 +37,12 @@ echo "Change conda config..."
 conda config --prepend pkgs_dirs ./pkgs
 echo $(conda config --show pkgs_dirs)
 
+echo "Merging large file..."
+find ./pkgs -type f -name *tar.bz2.aa | sed -e 's/tar.bz2.aa/tar.bz2/g' | while read file; do
+    cat ${file}.* > ${file}
+    rm ${file}.*
+done
+
 echo "Installing Anaconda Packages..."
 cat pkgs_conda.txt | paste -sd " " - | xargs conda install --channel anaconda --copy --yes ${OFFLINE}
 

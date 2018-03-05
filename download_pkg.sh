@@ -13,6 +13,12 @@ echo $(conda config --show pkgs_dirs)
 echo "Downloading Anaconda Packages..."
 cat pkgs_conda.txt | paste -sd " " - | xargs conda install --name vopt --force --yes --channel anaconda --download-only
 
+echo "Splitting large file..."
+find ./pkgs -type f -size +100M | while read file; do
+    split -b 50000k ${file} ${file}.
+    rm ${file}
+done
+
 echo "Downloading Conda-Forge Packages..."
 cat pkgs_conda-forge.txt | paste -sd " " - | xargs conda install --name vopt --force --yes --channel conda-forge --download-only
 
