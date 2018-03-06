@@ -32,7 +32,6 @@ flask-wtf
 glpk
 gmp
 gsl
-ipython-sql
 jmespath
 json-rpc
 jupyter_contrib_core
