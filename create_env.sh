@@ -15,18 +15,22 @@ else
   done
 fi
 
-echo "Change conda config..."
-conda config --remove pkgs_dirs ~/anaconda3/pkgs
-conda config --prepend pkgs_dirs ./pkgs
-echo $(conda config --show pkgs_dirs)
+if [ ! -z "$OFFLINE" ]; then
+  echo "Change conda config..."
+  conda config --remove pkgs_dirs ~/anaconda3/pkgs
+  conda config --prepend pkgs_dirs ./pkgs
+  echo $(conda config --show pkgs_dirs)
+fi
 
 echo "Creating conda environment..."
 conda create --name vopt --yes ${OFFLINE}
 
-echo "Clean conda cache..."
-rm -Rf `ls -1 -d ./pkgs/*/`
+if [ ! -z "$OFFLINE" ]; then
+  echo "Clean conda cache..."
+  rm -Rf `ls -1 -d ./pkgs/*/`
 
-echo "Recover conda config..."
-conda config --remove pkgs_dirs ./pkgs
-conda config --prepend pkgs_dirs ~/anaconda3/pkgs
-echo $(conda config --show pkgs_dirs)
+  echo "Recover conda config..."
+  conda config --remove pkgs_dirs ./pkgs
+  conda config --prepend pkgs_dirs ~/anaconda3/pkgs
+  echo $(conda config --show pkgs_dirs)
+fi

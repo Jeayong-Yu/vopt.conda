@@ -33,15 +33,20 @@ export BUILD_GLPK=1
 echo "Activate vopt environment..."
 source activate vopt
 
-echo "Change conda config..."
-conda config --prepend pkgs_dirs ./pkgs
-echo $(conda config --show pkgs_dirs)
+if [ ! -z "$OFFLINE" ]; then
+  echo "Clean conda cache..."
+  rm -Rf `ls -1 -d ./pkgs/*/`
 
-echo "Merging large file..."
-find ./pkgs -type f -name *tar.bz2.aa | sed -e 's/tar.bz2.aa/tar.bz2/g' | while read file; do
-    cat ${file}.* > ${file}
-    rm ${file}.*
-done
+  echo "Change conda config..."
+  conda config --prepend pkgs_dirs ./pkgs
+  echo $(conda config --show pkgs_dirs)
+
+  echo "Merging large file..."
+  find ./pkgs -type f -name *tar.bz2.aa | sed -e 's/tar.bz2.aa/tar.bz2/g' | while read file; do
+      cat ${file}.* > ${file}
+      rm ${file}.*
+  done
+fi
 
 echo "Installing Anaconda Packages..."
 cat pkgs_conda.txt | paste -sd " " - | xargs conda install --channel anaconda --copy --yes ${OFFLINE}
@@ -49,15 +54,18 @@ cat pkgs_conda.txt | paste -sd " " - | xargs conda install --channel anaconda --
 echo "Installing Conda-Forge Packages..."
 cat pkgs_conda-forge.txt | paste -sd " " - | xargs conda install --channel conda-forge --copy --yes ${OFFLINE}
 
-echo "Clean conda cache..."
-rm -Rf `ls -1 -d ./pkgs/*/`
 
-echo "Recover conda config..."
-conda config --remove pkgs_dirs ./pkgs
-echo $(conda config --show pkgs_dirs)
+if [ ! -z "$OFFLINE" ]; then
+  echo "Recover conda config..."
+  conda config --remove pkgs_dirs ./pkgs
+  echo $(conda config --show pkgs_dirs)
 
-echo "Installing Pip Packages..."
-cat pkgs_pip.txt | paste -sd " " - | xargs pip install --no-deps --no-index --find-links ./pkgs_pip
+  echo "Installing Pip Packages (offline)..."
+  cat pkgs_pip.txt | paste -sd " " - | xargs pip install --no-deps --no-index --find-links ./pkgs_pip
+else
+  echo "Installing Pip Packages..."
+  cat pkgs_pip.txt | paste -sd " " - | xargs pip install --no-deps
+fi
 
 echo "Jupyter notebook setting..."
 ipcluster nbextension enable --user
@@ -75,7 +83,7 @@ if [[ -v CYLP_SRC_DIR ]]; then
     return
   fi
 else
-  if [ -z "$OFFLINE" ]; then
+  if [ ! -z "$OFFLINE" ]; then
     echo "CyLP package for Python3 installing (offline mode)..."
     pip install pkg_pip/cylp.zip
   else
