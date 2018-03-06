@@ -23,4 +23,5 @@
 # KDE
 .idea
 .DS_Store
-/windows/windows_packages/numpy-1.12.1+mkl-cp35-cp35m-win_amd64.whl
+pkgs/cache/
+pkgs/mkl-2017.0.4-h1fae6ae_0.tar.bz2
