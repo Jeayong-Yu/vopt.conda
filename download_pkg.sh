@@ -31,6 +31,7 @@ conda config --prepend pkgs_dirs ~/anaconda3/pkgs
 echo $(conda config --show pkgs_dirs)
 
 echo "Downloading pip Packages..."
+rm -Rf `ls -1 ./pkgs_pip/*`
 cat pkgs_pip.txt | paste -sd " " - | xargs pip download --no-deps -d pkgs_pip
 
 echo "Downloading CyLP@py3 Packag3..."
