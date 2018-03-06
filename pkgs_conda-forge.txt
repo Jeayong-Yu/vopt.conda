@@ -46,6 +46,7 @@ paramiko
 parquet-cpp
 passlib
 pep8-naming
+pgspecial
 prettytable
 pudb
 pyarrow
