@@ -1,8 +1,9 @@
 cvxpy
 django-jinja
 fake-useragent
-flask-sqlalchemy
+ipython-genutils
 scrapyd
 scrapyd-client
 scs
 tushare
+git+https://github.com/catherinedevlin/ipython-sql.git

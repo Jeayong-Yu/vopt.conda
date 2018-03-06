@@ -216,3 +216,10 @@ https://conda.anaconda.org/conda-forge/osx-64/jupyter_contrib_core-0.3.3-py36_1.
 https://conda.anaconda.org/conda-forge/noarch/pep8-naming-0.5.0-py_0.tar.bz2
 https://conda.anaconda.org/conda-forge/osx-64/thrift-0.11.0-py36_0.tar.bz2
 https://conda.anaconda.org/conda-forge/noarch/flask-security-3.0.0-py_0.tar.bz2
+https://conda.anaconda.org/anaconda/osx-64/flake8-3.5.0-py36_1.tar.bz2
+https://conda.anaconda.org/anaconda/osx-64/numba-0.37.0-np113py36h6d7bb6e_0.tar.bz2
+https://conda.anaconda.org/anaconda/osx-64/openblas-0.2.20-4.tar.bz2
+https://conda.anaconda.org/anaconda/osx-64/llvmlite-0.22.0-py36h35728e8_0.tar.bz2
+https://conda.anaconda.org/anaconda/osx-64/sqlparse-0.2.4-py36_0.tar.bz2
+https://conda.anaconda.org/conda-forge/osx-64/prettytable-0.7.2-py36_1.tar.bz2
+https://conda.anaconda.org/conda-forge/noarch/flask-sqlalchemy-2.3.2-py_0.tar.bz2

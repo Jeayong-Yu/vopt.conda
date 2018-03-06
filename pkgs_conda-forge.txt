@@ -28,6 +28,7 @@ flask-principal
 flask-restplus
 flask-script
 flask-security
+flask-sqlalchemy
 flask-wtf
 glpk
 gmp
@@ -45,6 +46,7 @@ paramiko
 parquet-cpp
 passlib
 pep8-naming
+prettytable
 pudb
 pyarrow
 pycrypto

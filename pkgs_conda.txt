@@ -132,6 +132,7 @@ sphinxcontrib
 sphinxcontrib-websupport
 sqlalchemy
 sqlite
+sqlparse
 statsmodels
 terminado
 testpath
