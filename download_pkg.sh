@@ -2,6 +2,19 @@
 
 #!/usr/bin/env bash
 
+case `uname` in
+    Linux)
+        pkgs_conda="pkgs_conda_linux.txt"
+        ;;
+    Darwin)
+        pkgs_conda="pkgs_conda_macos.txt"
+        ;;
+    *)
+        echo "Error! Unsupported OS."
+        return
+        ;;
+esac
+
 echo "Clean conda cache..."
 conda clean -a -q -y
 
@@ -11,16 +24,16 @@ conda config --prepend pkgs_dirs ./pkgs
 echo $(conda config --show pkgs_dirs)
 
 echo "Downloading Anaconda Packages..."
-cat pkgs_conda.txt | paste -sd " " - | xargs conda install --name vopt --force --yes --channel anaconda --download-only
+cat $pkgs_conda | paste -sd " " - | xargs conda install --name vopt --force --yes --channel anaconda --download-only
+
+echo "Downloading Conda-Forge Packages..."
+cat pkgs_conda-forge.txt | paste -sd " " - | xargs conda install --name vopt --force --yes --channel conda-forge --download-only
 
 echo "Splitting large file..."
 find ./pkgs -type f -size +100M | while read file; do
     split -b 50000k ${file} ${file}.
     rm ${file}
 done
-
-echo "Downloading Conda-Forge Packages..."
-cat pkgs_conda-forge.txt | paste -sd " " - | xargs conda install --name vopt --force --yes --channel conda-forge --download-only
 
 echo "Clean conda cache..."
 rm -Rf `ls -1 -d ./pkgs/*/`

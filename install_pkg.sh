@@ -15,6 +15,19 @@ else
   done
 fi
 
+case `uname` in
+    Linux)
+        pkgs_conda="pkgs_conda_linux.txt"
+        ;;
+    Darwin)
+        pkgs_conda="pkgs_conda_macos.txt"
+        ;;
+    *)
+        echo "Error! Unsupported OS."
+        return
+        ;;
+esac
+
 # environment variables
 export MACOSX_DEPLOYMENT_TARGET=10.10
 
@@ -49,7 +62,7 @@ if [ ! -z "$OFFLINE" ]; then
 fi
 
 echo "Installing Anaconda Packages..."
-cat pkgs_conda.txt | paste -sd " " - | xargs conda install --channel anaconda --copy --yes ${OFFLINE}
+cat $pkgs_conda | paste -sd " " - | xargs conda install --channel anaconda --copy --yes ${OFFLINE}
 
 echo "Installing Conda-Forge Packages..."
 cat pkgs_conda-forge.txt | paste -sd " " - | xargs conda install --channel conda-forge --copy --yes ${OFFLINE}
@@ -85,7 +98,7 @@ if [[ -v CYLP_SRC_DIR ]]; then
 else
   if [ ! -z "$OFFLINE" ]; then
     echo "CyLP package for Python3 installing (offline mode)..."
-    pip install pkg_pip/cylp.zip
+    pip install pkgs_pip/cylp.zip
   else
     echo "CyLP package for Python3 installing from Github..."
     pip install git+https://github.com/VeranosTech/CyLP.git@py3
