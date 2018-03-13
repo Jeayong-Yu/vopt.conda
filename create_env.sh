@@ -9,7 +9,7 @@ else
       case $1 in
           --offline)
               shift
-              OFFLINE="python=3.6 --offline"
+              OFFLINE="--offline"
               echo "Set offline install mode."
       esac
   done
@@ -23,7 +23,7 @@ if [ ! -z "$OFFLINE" ]; then
 fi
 
 echo "Creating conda environment..."
-conda create --name vopt --yes ${OFFLINE}
+conda create --name vopt --yes python=3.6 ${OFFLINE}
 
 if [ ! -z "$OFFLINE" ]; then
   echo "Clean conda cache..."

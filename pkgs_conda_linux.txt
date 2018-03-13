@@ -59,8 +59,6 @@ jupyter_client
 jupyter_core
 kiwisolver
 krb5
-libcxx
-libcxxabi
 libedit
 libffi
 libgcc-ng
