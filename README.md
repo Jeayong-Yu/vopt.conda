@@ -74,5 +74,5 @@ $ source delete_env.sh
 
 1. Run the docker image
    ```
-   $ docker run -Pit --name vopt veranostech/vopt
+   $ docker run --name vopt --rm -Pit -p 8222:22 veranostech/vopt
    ```
