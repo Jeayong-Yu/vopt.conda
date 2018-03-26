@@ -38,6 +38,7 @@ json-rpc
 jupyter_contrib_core
 jupyter_nbextensions_configurator
 llvmlite
+marshmallow
 mccabe
 metis
 multiprocess

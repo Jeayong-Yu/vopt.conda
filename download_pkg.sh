@@ -23,6 +23,9 @@ conda config --remove pkgs_dirs ~/anaconda3/pkgs
 conda config --prepend pkgs_dirs ./pkgs
 echo $(conda config --show pkgs_dirs)
 
+echo "Downloading Latest Anaconda conda..."
+conda install --name base --force --yes --channel anaconda --download-only conda
+
 echo "Downloading Anaconda Packages..."
 cat $pkgs_conda | paste -sd " " - | xargs conda install --name vopt --force --yes --channel anaconda --download-only
 
@@ -42,6 +45,9 @@ echo "Recover conda config..."
 conda config --remove pkgs_dirs ./pkgs
 conda config --prepend pkgs_dirs ~/anaconda3/pkgs
 echo $(conda config --show pkgs_dirs)
+
+echo "Downloading Latest pip..."
+pip download --no-deps -d pkgs_pip pip
 
 echo "Downloading pip Packages..."
 rm -Rf `ls -1 ./pkgs_pip/*`

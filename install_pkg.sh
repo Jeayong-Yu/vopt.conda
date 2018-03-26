@@ -59,14 +59,22 @@ if [ ! -z "$OFFLINE" ]; then
       cat ${file}.* > ${file}
       rm ${file}.*
   done
+
+  echo "Updating pip (offline)..."
+  pip install --no-deps --no-index --find-links ./pkgs_pip --upgrade pip
+else
+  echo "Updating pip (online)..."
+  pip install --upgrade --no-deps pip
 fi
 
+echo "Updating Anaconda conda..."
+conda update -n base --yes --verbose conda  ${OFFLINE}
+
 echo "Installing Anaconda Packages..."
-cat $pkgs_conda | paste -sd " " - | xargs conda install --channel anaconda --copy --yes ${OFFLINE}
+cat $pkgs_conda | paste -sd " " - | xargs conda install --channel anaconda --copy --yes --verbose ${OFFLINE}
 
 echo "Installing Conda-Forge Packages..."
-cat pkgs_conda-forge.txt | paste -sd " " - | xargs conda install --channel conda-forge --copy --yes ${OFFLINE}
-
+cat pkgs_conda-forge.txt | paste -sd " " - | xargs conda install --channel conda-forge --copy --yes --verbose ${OFFLINE}
 
 if [ ! -z "$OFFLINE" ]; then
   echo "Recover conda config..."
@@ -76,7 +84,7 @@ if [ ! -z "$OFFLINE" ]; then
   echo "Installing Pip Packages (offline)..."
   cat pkgs_pip.txt | paste -sd " " - | xargs pip install --no-deps --no-index --find-links ./pkgs_pip
 else
-  echo "Installing Pip Packages..."
+  echo "Installing Pip Packages (online)..."
   cat pkgs_pip.txt | paste -sd " " - | xargs pip install --no-deps
 fi
 

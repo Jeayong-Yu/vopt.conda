@@ -79,7 +79,6 @@ lxml
 mako
 markdown
 markupsafe
-marshmallow
 matplotlib
 mccabe
 mistune

@@ -1045,3 +1045,12 @@ https://conda.anaconda.org/conda-forge/linux-64/rsa-3.4.2-py36_0.tar.bz2
 https://conda.anaconda.org/conda-forge/linux-64/fftw-3.3.7-0.tar.bz2
 https://conda.anaconda.org/conda-forge/linux-64/pandoc-2.1.2-0.tar.bz2
 https://conda.anaconda.org/conda-forge/linux-64/alabaster-0.7.10-py36_1.tar.bz2
+https://conda.anaconda.org/conda-forge/noarch/botocore-1.9.15-py_0.tar.bz2
+https://conda.anaconda.org/conda-forge/noarch/marshmallow-3.0.0b7-py_0.tar.bz2
+https://conda.anaconda.org/conda-forge/osx-64/suitesparse-4.5.6-blas_openblas_200.tar.bz2
+https://conda.anaconda.org/conda-forge/osx-64/arrow-cpp-0.9.0-py36_4.tar.bz2
+https://conda.anaconda.org/conda-forge/osx-64/aniso8601-3.0.0-py36_0.tar.bz2
+https://conda.anaconda.org/conda-forge/osx-64/parquet-cpp-1.4.0-0.tar.bz2
+https://conda.anaconda.org/conda-forge/osx-64/awscli-1.14.62-py36_0.tar.bz2
+https://conda.anaconda.org/conda-forge/osx-64/pyarrow-0.9.0-py36_1.tar.bz2
+https://conda.anaconda.org/conda-forge/osx-64/gsl-2.4-blas_openblas_0.tar.bz2
