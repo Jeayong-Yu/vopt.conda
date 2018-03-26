@@ -3,6 +3,7 @@ cvxpy
 django-jinja
 fake-useragent
 ipython-genutils
+python-xbrl
 scrapyd
 scrapyd-client
 scs

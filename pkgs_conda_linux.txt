@@ -7,6 +7,7 @@ automat
 babel
 beautifulsoup4
 bleach
+bokeh
 ca-certificates
 certifi
 cffi
@@ -20,6 +21,7 @@ cvxcanon
 cvxopt
 cycler
 cython
+datashader
 dbus
 decorator
 django
@@ -77,6 +79,7 @@ lxml
 mako
 markdown
 markupsafe
+marshmallow
 matplotlib
 mccabe
 mistune
@@ -100,6 +103,7 @@ pcre
 pexpect
 pickleshare
 pip
+plotly
 pluggy
 prompt_toolkit
 psycopg2
@@ -162,6 +166,7 @@ wcwidth
 webencodings
 werkzeug
 wheel
+xarray
 xz
 zeromq
 zlib
