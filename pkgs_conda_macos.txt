@@ -74,6 +74,7 @@ marshmallow
 matplotlib
 mistune
 mkl
+nb_conda
 nbconvert
 nbformat
 ncurses

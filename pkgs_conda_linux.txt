@@ -84,6 +84,7 @@ matplotlib
 mccabe
 mistune
 mkl
+nb_conda
 nbconvert
 nbformat
 ncurses
