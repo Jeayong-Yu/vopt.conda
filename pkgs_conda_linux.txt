@@ -94,6 +94,7 @@ numpy
 openssl
 packaging
 pandas
+pandas_datareader
 pandoc
 pandocfilters
 parsel
