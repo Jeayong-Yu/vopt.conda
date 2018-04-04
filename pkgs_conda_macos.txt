@@ -154,6 +154,8 @@ webencodings
 werkzeug
 wheel
 xarray
+xlrd
+xlwt
 xz
 zeromq
 zlib
