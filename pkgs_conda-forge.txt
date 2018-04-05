@@ -35,9 +35,11 @@ flask-wtf
 glpk
 gmp
 gsl
+hdf5
 jmespath
 json-rpc
 jupyter_contrib_core
+jupyter_contrib_nbextensions
 jupyter_nbextensions_configurator
 llvmlite
 marshmallow

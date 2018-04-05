@@ -113,5 +113,9 @@ else
   fi
 fi
 
+jupyter contrib nbextension install --sys-prefix
+
+#
+
 echo "Deactivate vopt environment..."
 source deactivate
