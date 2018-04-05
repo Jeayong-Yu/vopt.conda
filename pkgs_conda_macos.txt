@@ -78,7 +78,7 @@ nbconvert
 nbformat
 ncurses
 nose
-notebook
+notebook=5.4.0
 numba
 numpy
 openblas
