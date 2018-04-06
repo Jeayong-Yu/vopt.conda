@@ -89,14 +89,18 @@ else
 fi
 
 echo "Jupyter notebook setting..."
+
 jupyter contrib nbextension install --user
 jupyter nbextensions_configurator enable --user
+
 jupyter nbextension install --user --py ipyparallel
 jupyter nbextension enable --user --py ipyparallel
 jupyter serverextension enable --user --py ipyparallel
 ipcluster nbextension enable --user
-jupyter nbextension disable nbpresent --user --py
-jupyter serverextension disable nbpresent --user --py
+
+jupyter nbextension disable --user --py nbpresent
+jupyter serverextension disable --user --py nbpresent
+
 
 if [[ -v CYLP_SRC_DIR ]]; then
   if [ -d "$CYLP_SRC_DIR" ]; then
