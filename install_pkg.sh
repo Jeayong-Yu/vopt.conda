@@ -89,8 +89,14 @@ else
 fi
 
 echo "Jupyter notebook setting..."
-ipcluster nbextension enable --user
+jupyter contrib nbextension install --user
 jupyter nbextensions_configurator enable --user
+jupyter nbextension install --user --py ipyparallel
+jupyter nbextension enable --user --py ipyparallel
+jupyter serverextension enable --user --py ipyparallel
+ipcluster nbextension enable --user
+jupyter nbextension disable nbpresent --user --py
+jupyter serverextension disable nbpresent --user --py
 
 if [[ -v CYLP_SRC_DIR ]]; then
   if [ -d "$CYLP_SRC_DIR" ]; then
@@ -112,10 +118,6 @@ else
     pip install git+https://github.com/VeranosTech/CyLP.git@py3
   fi
 fi
-
-jupyter contrib nbextension install --sys-prefix
-
-#
 
 echo "Deactivate vopt environment..."
 source deactivate
