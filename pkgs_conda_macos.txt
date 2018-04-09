@@ -119,6 +119,7 @@ pytz
 pyzmq
 queuelib
 readline
+redis-py
 requests
 scikit-learn
 scipy
