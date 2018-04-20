@@ -26,6 +26,7 @@ fftw
 flask-babelex
 flask-login
 flask-mail
+flask-migrate
 flask-principal
 flask-restplus
 flask-script
