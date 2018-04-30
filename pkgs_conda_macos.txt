@@ -106,6 +106,7 @@ pycodestyle
 pycparser
 pydispatcher
 pygments
+pyjwt
 pymongo
 pyopenssl
 pyparsing

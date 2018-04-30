@@ -2,6 +2,7 @@ boto3
 cvxpy
 django-jinja
 fake-useragent
+Flask-Dance[sqla]
 ipython-genutils
 python-xbrl
 scrapyd
