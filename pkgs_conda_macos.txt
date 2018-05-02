@@ -33,6 +33,7 @@ flake8
 flask
 freetype
 gevent
+graphviz
 greenlet
 gunicorn
 html5lib
@@ -116,6 +117,7 @@ pytest-runner
 python=3.6
 python-dateutil
 python-editor
+python-graphviz
 pytz
 pyzmq
 queuelib

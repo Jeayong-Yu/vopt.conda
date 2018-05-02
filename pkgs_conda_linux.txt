@@ -37,6 +37,7 @@ freetype
 gevent
 glib
 gmp
+graphviz
 greenlet
 gst-plugins-base
 gstreamer
@@ -128,6 +129,7 @@ pytest-runner
 python=3.6
 python-dateutil
 python-editor
+python-graphviz
 pytz
 pyzmq
 qt
