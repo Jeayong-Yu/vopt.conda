@@ -25,7 +25,7 @@ a conda virtual enviroment named `vopt` for `vopt` Veranos Optimizer
 
   and execute:
   ```
-  $ bash Anaconda3-4.4.0-Linux-x86_64.sh
+  $ bash Anaconda3-5.1.0-Linux-x86_64.sh
   ```
 
 * You need to upgrade bash to 4.2 or newer version
