@@ -1,5 +1,9 @@
 #!/usr/bin/env bash
 
+
+##############################################################################
+# input argument processing
+##############################################################################
 if [[ "$#" -eq "0" ]]; then
   OFFLINE=""
   echo "Set online install mode."
@@ -15,6 +19,10 @@ else
   done
 fi
 
+
+##############################################################################
+# OS check
+##############################################################################
 case `uname` in
     Linux)
         pkgs_conda="pkgs_conda_linux.txt"
@@ -28,7 +36,10 @@ case `uname` in
         ;;
 esac
 
-# environment variables
+
+##############################################################################
+# environment variables setting
+##############################################################################
 export MACOSX_DEPLOYMENT_TARGET=10.10
 
 export PKG_CONFIG_PATH=$HOME/anaconda3/envs/vopt/lib/pkgconfig/
@@ -43,6 +54,10 @@ export GLPK_LIB_DIR=$HOME/anaconda3/envs/vopt/
 export GLPK_INC_DIR=$HOME/anaconda3/envs/vopt/include
 export BUILD_GLPK=1
 
+
+##############################################################################
+# environment activation
+##############################################################################
 echo "Activate vopt environment..."
 source activate vopt
 
@@ -67,15 +82,31 @@ else
   pip install --upgrade --no-deps pip
 fi
 
+
+##############################################################################
+# Anaconda update
+##############################################################################
 echo "Updating Anaconda conda..."
 conda update -n base --yes --verbose conda  ${OFFLINE}
 
+
+##############################################################################
+# Anaconda package in anaconda channel installation
+##############################################################################
 echo "Installing Anaconda Packages..."
 cat $pkgs_conda | paste -sd " " - | xargs conda install --channel anaconda --copy --yes --verbose ${OFFLINE}
 
+
+##############################################################################
+# Anaconda package in conda-forge channel installation
+##############################################################################
 echo "Installing Conda-Forge Packages..."
 cat pkgs_conda-forge.txt | paste -sd " " - | xargs conda install --channel conda-forge --copy --yes --verbose ${OFFLINE}
 
+
+##############################################################################
+# pip package install
+##############################################################################
 if [ ! -z "$OFFLINE" ]; then
   echo "Recover conda config..."
   conda config --remove pkgs_dirs ./pkgs
@@ -88,6 +119,10 @@ else
   cat pkgs_pip.txt | paste -sd " " - | xargs pip install --no-deps
 fi
 
+
+##############################################################################
+# Jupyter notebook setting
+##############################################################################
 echo "Jupyter notebook setting..."
 
 jupyter contrib nbextension install --user
@@ -101,6 +136,11 @@ ipcluster nbextension enable --user
 jupyter nbextension disable --user --py nbpresent
 jupyter serverextension disable --user --py nbpresent
 
+
+##############################################################################
+# CyLP package install
+##############################################################################
+echo "CyLP package installing..."
 
 if [[ -v CYLP_SRC_DIR ]]; then
   if [ -d "$CYLP_SRC_DIR" ]; then
@@ -123,5 +163,9 @@ else
   fi
 fi
 
+
+##############################################################################
+# environment deactivation
+##############################################################################
 echo "Deactivate vopt environment..."
 source deactivate

@@ -67,6 +67,7 @@ libffi
 libgcc-ng
 libgfortran
 libgfortran-ng
+libiconv
 libpng
 libpq
 libsodium
@@ -84,6 +85,8 @@ matplotlib
 mccabe
 mistune
 mkl
+mkl_fft
+mkl_random
 nb_conda
 nbconvert
 nbformat
@@ -92,6 +95,7 @@ nose
 notebook=5.4.0
 numba
 numpy
+openblas
 openssl
 packaging
 pandas
@@ -102,6 +106,7 @@ parsel
 parso
 patsy
 pcre
+pep8
 pexpect
 pickleshare
 pip

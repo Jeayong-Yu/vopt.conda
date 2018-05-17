@@ -1,5 +1,6 @@
 boto3
-cvxpy
+bs4
+cvxpy==0.4.11
 django-jinja
 fake-useragent
 Flask-Dance[sqla]
