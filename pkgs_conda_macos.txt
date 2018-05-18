@@ -9,6 +9,7 @@ babel
 beautifulsoup4
 bleach
 bokeh
+boto3
 ca-certificates
 certifi
 cffi
