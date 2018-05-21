@@ -38,6 +38,7 @@ gmp
 google-api-python-client
 gsl
 hdf5
+jansson
 jmespath
 json-rpc
 jupyter_contrib_core
