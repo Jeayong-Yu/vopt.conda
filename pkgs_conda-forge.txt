@@ -72,5 +72,6 @@ thrift
 uritemplate
 urlobject
 urwid
+uwsgi
 wtforms
 yaml
