@@ -2,11 +2,10 @@ aniso8601
 argon2_cffi
 arrow-cpp
 autopep8
-awscli
 bcrypt
 blas
 blinker
-botocore
+boto3
 celery
 cerberus
 coincbc
@@ -52,7 +51,6 @@ metis
 multiprocess
 nbsphinx
 oauthlib
-paramiko
 parquet-cpp
 passlib
 pep8-naming
