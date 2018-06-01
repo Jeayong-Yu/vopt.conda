@@ -1,9 +1,12 @@
 bs4
+buildbot[bundle]
 cvxpy
 django-jinja
 fake-useragent
 Flask-Dance[sqla]
 ipython-genutils
+msgpack
+osqp
 python-xbrl
 scrapyd
 scrapyd-client
