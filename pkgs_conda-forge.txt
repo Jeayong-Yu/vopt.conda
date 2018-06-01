@@ -43,7 +43,6 @@ jupyter_contrib_core
 jupyter_contrib_nbextensions
 jupyter_nbextensions_configurator
 lazy
-
 llvmlite
 marshmallow
 mccabe
