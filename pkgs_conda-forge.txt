@@ -19,7 +19,6 @@ django-guardian
 djangorestframework
 ecdsa
 events
-fabric3
 fastparquet
 feather-format
 fftw
@@ -45,6 +44,7 @@ jupyter_contrib_core
 jupyter_contrib_nbextensions
 jupyter_nbextensions_configurator
 lazy
+
 llvmlite
 marshmallow
 mccabe

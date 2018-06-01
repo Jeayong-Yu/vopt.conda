@@ -30,6 +30,7 @@ docutils
 ecos
 entrypoints
 expat
+fabric
 fastcache
 flake8
 flask
