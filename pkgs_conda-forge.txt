@@ -59,6 +59,7 @@ pudb
 pyarrow
 pycrypto
 pyflakes
+python-highcharts
 pyyaml
 requests-oauthlib
 rsa
