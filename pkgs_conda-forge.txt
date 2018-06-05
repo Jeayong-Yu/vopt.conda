@@ -36,6 +36,7 @@ gmp
 google-api-python-client
 gsl
 hdf5
+ipython-sql
 jansson
 jmespath
 json-rpc

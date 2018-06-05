@@ -12,4 +12,4 @@ scrapyd
 scrapyd-client
 scs
 tushare
-git+https://github.com/catherinedevlin/ipython-sql.git
+git+https://github.com/thedataincubator/ihtml.git
