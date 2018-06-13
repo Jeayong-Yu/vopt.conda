@@ -66,6 +66,7 @@ requests-oauthlib
 rsa
 s3transfer
 speaklater
+sqlalchemy-migrate
 suitesparse
 tbb
 thrift
