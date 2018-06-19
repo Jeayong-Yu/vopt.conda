@@ -63,6 +63,7 @@ jpeg
 jsonschema
 jupyter_client
 jupyter_core
+jupyterlab
 kiwisolver
 krb5
 libcxx
