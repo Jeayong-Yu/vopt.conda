@@ -65,6 +65,7 @@ pyyaml
 requests-oauthlib
 rsa
 s3transfer
+selenium
 speaklater
 sqlalchemy-migrate
 suitesparse
