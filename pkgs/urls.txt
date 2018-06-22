@@ -491,3 +491,4 @@ https://conda.anaconda.org/conda-forge/linux-64/cerberus-1.2-py36_0.tar.bz2
 https://conda.anaconda.org/conda-forge/linux-64/openssl-1.0.2o-0.tar.bz2
 https://conda.anaconda.org/conda-forge/linux-64/yaml-0.1.7-0.tar.bz2
 https://conda.anaconda.org/conda-forge/linux-64/blas-1.1-openblas.tar.bz2
+https://conda.anaconda.org/anaconda/linux-64/certifi-2018.4.16-py36_0.tar.bz2
