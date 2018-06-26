@@ -51,6 +51,7 @@ icu
 idna
 imagesize
 incremental
+inflection
 intel-openmp
 ipykernel
 ipyparallel
