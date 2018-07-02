@@ -20,7 +20,6 @@ ecdsa
 events
 fastparquet
 feather-format
-fftw
 flask-babelex
 flask-login
 flask-mail
@@ -62,7 +61,7 @@ pycrypto
 pyflakes
 python-highcharts
 pyyaml
-requests-oauthlib
+requests-oauthlib>=1.0.0
 rsa
 s3transfer
 selenium

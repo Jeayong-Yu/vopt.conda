@@ -1,3 +1,4 @@
+autobahn
 bs4
 buildbot[bundle]
 cvxpy
@@ -7,9 +8,9 @@ Flask-Dance[sqla]
 ipython-genutils
 msgpack
 osqp
-python-xbrl
 scrapyd
 scrapyd-client
 scs
 tushare
+txaio
 git+https://github.com/thedataincubator/ihtml.git
