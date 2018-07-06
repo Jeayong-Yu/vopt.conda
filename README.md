@@ -93,17 +93,16 @@ check you bash version and upgrade to 4.x.
 
 ### Bash Upgrade in Mac OSX
 
-1. install brew 
+1. install brew
 
-  * https://brew.sh/
-  
+   * https://brew.sh/
+
 2. upgrade bash:
 
    ```
    brew install bash
    ```
 
-3. Change the default shell 
+3. Change the default shell
 
-   ![Mac OSX Shell Change](https://i.stack.imgur.com/4OUTN.png)
-
+   ![Mac OSX Shell Change](./macosxchangeshell.png)
