@@ -76,3 +76,34 @@ $ source delete_env.sh
    ```
    $ docker run --name vopt --rm -Pit -p 8222:22 veranostech/vopt
    ```
+
+
+# Trouble Shootings
+
+## Bash Version Problem
+
+### Error Messages
+
+If you meet the error message,
+```
+conditional binary operator expected
+```
+
+check you bash version and upgrade to 4.x.
+
+### Bash Upgrade in Mac OSX
+
+1. install brew 
+
+  * https://brew.sh/
+  
+2. upgrade bash:
+
+   ```
+   brew install bash
+   ```
+
+3. Change the default shell 
+
+   ![Mac OSX Shell Change](https://i.stack.imgur.com/4OUTN.png)
+
