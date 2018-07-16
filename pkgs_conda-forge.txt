@@ -8,6 +8,7 @@ blinker
 boto3
 celery
 cerberus
+chaospy
 coincbc
 colorama
 cufflinks-py
@@ -64,7 +65,6 @@ pyyaml
 requests-oauthlib>=1.0.0
 rsa
 s3transfer
-selenium
 speaklater
 sqlalchemy-migrate
 suitesparse

@@ -150,6 +150,7 @@ scikit-learn
 scipy
 scrapy
 seaborn
+selenium
 send2trash
 service_identity
 setuptools
