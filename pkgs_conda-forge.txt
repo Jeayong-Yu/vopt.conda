@@ -30,6 +30,7 @@ flask-restplus
 flask-script
 flask-security
 flask-sqlalchemy
+flask-webpack
 flask-wtf
 glpk
 gmp
