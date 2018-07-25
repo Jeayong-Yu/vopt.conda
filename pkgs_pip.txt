@@ -8,6 +8,7 @@ Flask-Dance[sqla]
 ipython-genutils
 msgpack
 pipdeptree
+python-lunardate
 osqp
 scrapyd
 scrapyd-client
