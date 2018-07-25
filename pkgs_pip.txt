@@ -6,9 +6,9 @@ django-jinja
 fake-useragent
 Flask-Dance[sqla]
 ipython-genutils
+lunardate
 msgpack
 pipdeptree
-python-lunardate
 osqp
 scrapyd
 scrapyd-client
